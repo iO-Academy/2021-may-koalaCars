@@ -5,7 +5,7 @@ curl_setopt($request, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($request);
 $data = json_decode($response);
 
-$db = new \PDO('mysql:host=db; dbname=koalaCars', 'root', 'password');
+$db = new PDO('mysql:host=db; dbname=koalaCars', 'root', 'password');
 $query = $db->prepare("DROP TABLE cars");
 $query->execute();
 $query = $db->prepare("CREATE TABLE cars");
