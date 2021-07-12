@@ -30,8 +30,8 @@ CREATE TABLE `cars` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `make` varchar(255) NOT NULL DEFAULT '',
   `model` varchar(255) NOT NULL DEFAULT '',
-  `year` int(4) NOT NULL,
-  `color` varchar(10) NOT NULL DEFAULT '',
+  `year` int(4) NULL,
+  `color` varchar(10) NULL DEFAULT '',
   `location` varchar(255) NOT NULL DEFAULT '',
   `image` varchar(10) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
