@@ -31,9 +31,4 @@ foreach ($data as $car) {
                     ':location' => $location,
                     ':image' => $image
     ]);
-
 }
-
-
-
-
