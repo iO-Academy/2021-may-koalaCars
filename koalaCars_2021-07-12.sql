@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.34)
 # Database: koalaCars
-# Generation Time: 2021-07-12 12:53:12 +0000
+# Generation Time: 2021-07-12 13:17:07 +0000
 # ************************************************************
 
 
@@ -28,12 +28,12 @@ DROP TABLE IF EXISTS `cars`;
 
 CREATE TABLE `cars` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `make` varchar(255) DEFAULT NULL,
-  `model` varchar(255) DEFAULT '',
-  `year` int(11) DEFAULT NULL,
-  `color` varchar(255) DEFAULT NULL,
-  `location` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
+  `make` varchar(255) NOT NULL DEFAULT '',
+  `model` varchar(255) NOT NULL DEFAULT '',
+  `year` int(4) NOT NULL,
+  `color` varchar(10) NOT NULL DEFAULT '',
+  `location` varchar(255) NOT NULL DEFAULT '',
+  `image` varchar(10) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
