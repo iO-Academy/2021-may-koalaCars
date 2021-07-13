@@ -1,13 +1,10 @@
 <?php
+
 require_once 'vendor/autoload.php';
 
 $dbConnection = \KoalaCars\DbConnector::getDb();
-$cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+$car = \KoalaCars\Hydrators\CarHydrator::getCar($dbConnection);
 
-
-echo '<pre>';
-print_r($car);
-echo '</pre>';
 ?>
 
 <html lang="en">
@@ -18,7 +15,7 @@ echo '</pre>';
 <body>
 <div class="container">
     <?php
-    \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
+    echo \KoalaCars\ViewHelpers\CarViewHelper::displayCarDetails($car);
     ?>
 </div>
 </body>
