@@ -4,10 +4,6 @@ require_once 'vendor/autoload.php';
 $dbConnection = \KoalaCars\DbConnector::getDb();
 $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
 
-
-echo '<pre>';
-print_r($car);
-echo '</pre>';
 ?>
 
 <html lang="en">
