@@ -24,6 +24,7 @@ try {
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;"
     );
     $query->execute();
+    echo 'Table created' . "\n";
 } catch(PDOException $e) {
     echo 'Cannot create a new table' . "\n";
 }
@@ -42,6 +43,7 @@ try {
             ':image' => $car->image
         ]);
     }
+    echo 'Data inserted into the table' . "\n";
 } catch (PDOException $e) {
-    echo 'Cannot insert data into the table'. "\n";
+    echo 'Cannot insert data into the table' . "\n";
 }
