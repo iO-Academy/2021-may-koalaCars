@@ -12,7 +12,7 @@ class CarViewHelper
                 $output .= '<div class="car_image"><img src="https://dev.io-academy.uk/resources/cars/' . $car->getImage() . '"></div>';
                 $output .= '<div><h1>Make: </h1>' . $car->getMake() . '</div>';
                 $output .= '<div><h1>Model: </h1>' . $car->getModel() . '</div>';
-                $output .= '<div><h1>See more</h1></div>';
+                $output .= '<div><a href="details.php?id=' . $car->getId() . '">See more</a></div>';
             } else {
                 return 'invalid information';
             }
