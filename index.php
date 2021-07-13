@@ -14,7 +14,7 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
 <body>
 <div class="container">
     <?php
-    \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
+    echo \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
     ?>
 </div>
 </body>
