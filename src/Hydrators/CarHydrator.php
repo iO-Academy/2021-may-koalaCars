@@ -15,9 +15,8 @@ class CarHydrator
         return $query->fetchAll();
     }
 
-    public static function getCar(\PDO $db): CarEntity
+    public static function getCar(\PDO $db, $id): CarEntity
     {
-        $id = $_GET['id'];
         $query = $db->prepare('SELECT `make`, `model`, `year`,`color`,`location`,`image` FROM `cars` WHERE `id` = ?');
         $query->execute([$id]);
         $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
@@ -26,19 +25,17 @@ class CarHydrator
 
     public static function getMakes(\PDO $db): array
     {
-        $make = $_GET['make'];
         $query = $db->prepare('SELECT `make` FROM `cars` GROUP BY `make` ORDER BY COUNT(`make`) DESC;');
-        $query->execute([$make]);
+        $query->execute();
         $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
         return $query->fetchAll();
     }
 
-    public static function getCarsByMake(\PDO $db): CarEntity
+    public static function getCarsByMake(\PDO $db, $make)
     {
-        $make = $_GET['make'];
-        $query = $db->prepare('SELECT `make`, `model`, `image` FROM `cars` WHERE `make` = ?');
+        $query = $db->prepare('SELECT `id`, `make`, `model`, `image` FROM `cars` WHERE `make` = ?');
         $query->execute([$make]);
         $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
-        return $query->fetch();
+        return $query->fetchAll();
     }
 }
