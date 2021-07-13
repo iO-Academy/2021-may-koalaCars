@@ -11,7 +11,6 @@ body {
 
 nav {
     background-image: url("../images/bck-ground5.jpg");
-    /*position: fixed;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -37,7 +36,7 @@ nav h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    top: 280px;
+    top: 130px;
 }
 
 .carCards-container {
@@ -74,7 +73,8 @@ img {
 
 .link, a {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 a {
@@ -88,4 +88,98 @@ a {
 
 a:hover {
     background-color: #C2D8E5;
+}
+
+.make-btn {
+    background-color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    border-style: none;
+    margin: 5px;
+    transition: 0.15s;
+}
+
+.make-container {
+    text-align: center;
+    padding-top: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.make-btn a {
+    outline: none;
+    border: none;
+    padding: 0;
+}
+.make-btn a:hover {
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.make-btn:hover {
+    border-radius: 4px;
+    transform: scale(1.1);
+}
+
+.all-cars-btn {
+    background-color: #1885c1;
+    outline: none;
+    border: none;
+    margin-left: 50%;
+    margin-top: 20px;
+    transition: 0.15s;
+}
+
+.all-cars-btn:hover{
+    transform: scale(1.1);
+}
+
+.all-cars-btn a{
+    background-color: #00ffcc;
+    outline: none;
+    border: none;
+    padding: 10px;
+}
+
+.home-scroller {
+    position: absolute;
+    left: 96%;
+}
+
+.home-scroller a{
+    outline: none;
+    border: none;
+}
+
+.home-scroller a:hover{
+   background-color: transparent;
+}
+
+.home-scroller i {
+    position: fixed;
+    color: #00ffcc;
+    font-size: 3rem;
+    animation: alternate bounce 0.7s infinite;
+    transition: 0.15s;
+}
+
+.home-scroller i:hover {
+    transform: scale(1.1);
+}
+
+@keyframes bounce {
+    0%  {
+        bottom: 0;
+    }
+
+    100%  {
+        bottom: 8px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .home-scroller {
+        left: 90%;
+    }
 }

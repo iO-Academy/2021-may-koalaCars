@@ -20,11 +20,12 @@ $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalise.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>KoalasCars</title>
 </head>
 <body>
 <header>
-    <nav>
+    <nav id="navbar">
         <img class="logo" src="images/Logo.png" alt="KoalasCars">
         <h1 class="title-logo">Koalas Cars</h1>
     </nav>
@@ -33,12 +34,19 @@ $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
     <?php
     echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes);
     ?>
-    <button><a href="index.php">All cars</a></button>
+    <button class="all-cars-btn"><a href="index.php">All cars</a></button>
 </div>
 <div class="main-container">
     <?php
     echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars);
     ?>
 </div>
+
+<div  class="home-scroller">
+    <a href="#navbar">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</div>
+
 </body>
 </html>
