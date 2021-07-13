@@ -22,4 +22,12 @@ class CarHydrator
         $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
         return $query->fetch();
     }
+    public static function getCarsByMake(\PDO $db): CarEntity
+    {
+        $make = $_GET['make'];
+        $query = $db->prepare('SELECT `make`, `model`, `image` FROM `cars` WHERE `make` = ?');
+        $query->execute([$make]);
+        $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
+        return $query->fetch();
+    }
 }
