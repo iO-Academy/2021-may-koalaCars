@@ -5,17 +5,26 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
 ?>
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-<!--    <link rel="stylesheet" href="css/normalize.css" type="text/css">-->
-<!--    <link rel="stylesheet" href="css/style.css" type="text/css">-->
-</head>
-<body>
-<div class="container">
-    <?php
-    echo \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
-    ?>
-</div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalise.css" type="text/css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <title>KoalasCars</title>
+    </head>
+    <body>
+    <header>
+        <nav>
+            <img class="logo" src="images/Logo.png" alt="KoalasCars">
+            <h1 class="title-logo">Koalas Cars</h1>
+        </nav>
+    </header>
+        <div class="main-container">
+            <?php
+            echo \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
+            ?>
+        </div>
+    </body>
 </html>
