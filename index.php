@@ -10,7 +10,6 @@ if (empty($_GET['make'])) {
 }
 
 $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
-
 ?>
 
 <html lang="en">
