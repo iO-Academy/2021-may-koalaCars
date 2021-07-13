@@ -10,7 +10,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $query = $db->prepare("DROP TABLE cars");
 $query->execute();
 $query = $db->prepare(
-        "CREATE TABLE `cars` (
+    "CREATE TABLE `cars` (
       `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
       `make` varchar(255) NOT NULL DEFAULT '',
       `model` varchar(255) NOT NULL DEFAULT '',
@@ -28,11 +28,11 @@ foreach ($data as $car) {
     $query = $db->prepare("INSERT INTO `cars` (`id`, `make`, `model`, `year`, `color`, `location`, `image`) 
             VALUES (:id, :make, :model, :year, :color, :location, :image)");
     $query->execute([':id' => $car->id,
-                    ':make' => $car->make,
-                    ':model' => $car->model,
-                    ':year' => $car->year,
-                    ':color' => $car->color,
-                    ':location' => $car->location,
-                    ':image' => $car->image
+        ':make' => $car->make,
+        ':model' => $car->model,
+        ':year' => $car->year,
+        ':color' => $car->color,
+        ':location' => $car->location,
+        ':image' => $car->image
     ]);
 }
