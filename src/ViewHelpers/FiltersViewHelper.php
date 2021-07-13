@@ -15,6 +15,7 @@ class FiltersViewHelper
                 return 'invalid information';
             }
         }
-        return $output.= '</div> ';
+         $output.= '</div> ';
+        return $output;
     }
 }
