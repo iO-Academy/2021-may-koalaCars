@@ -1,8 +1,15 @@
 <?php
 require_once 'vendor/autoload.php';
 
-$dbConnection = KoalaCars\DbConnector::getDb();
-$cars = KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+$dbConnection = \KoalaCars\DbConnector::getDb();
+$cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+$car =  \KoalaCars\Hydrators\CarHydrator::getCar($dbConnection,4);
+
+echo '<pre>';
+print_r($car);
+echo '</pre>';
+
+
 ?>
 
 <html lang="en">
