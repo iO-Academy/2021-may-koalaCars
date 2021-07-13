@@ -9,7 +9,7 @@ $db = new PDO('mysql:host=127.0.0.1;dbname=koalaCars', 'root', 'password');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 try {
-    $query = $db->prepare("DROP TABLE IF EXISTS cars");
+    $query = $db->prepare("DROP TABLE IF EXISTS `cars`");
     $query->execute();
     $query = $db->prepare(
         "CREATE TABLE `cars` (
