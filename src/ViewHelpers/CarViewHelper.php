@@ -4,7 +4,7 @@ namespace KoalaCars\ViewHelpers;
 
 class CarViewHelper
 {
-    public static function displayAllCars(array $cars): string
+    public static function displayCars(array $cars): string
     {
         $output = '';
         foreach ($cars as $car) {
