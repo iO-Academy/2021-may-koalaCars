@@ -21,10 +21,10 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
             <h1 class="title-logo">Koalas Cars</h1>
         </nav>
     </header>
-        <div class="main-container">
+        <main>
             <?php
             echo \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
             ?>
-        </div>
+        </main>
     </body>
 </html>

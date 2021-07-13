@@ -1,7 +1,7 @@
 * {
     font-family: 'Encode Sans SC', sans-serif;
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -32,7 +32,7 @@ nav h1 {
     font-size: 5rem;
 }
 
-.main-container {
+main {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -42,7 +42,7 @@ nav h1 {
 
 .carCards-container {
     justify-self: center;
-    box-shadow: 0 8px 8px  #000000;
+    box-shadow: 0 8px 8px #000000;
     border: 1px solid #000000;
     border-radius: 8px;
     background-color: #ffffff;
@@ -52,11 +52,11 @@ nav h1 {
 img {
     width: 440px;
     border-radius: 40px;
-    margin:5px;
+    margin: 5px;
 }
 
 .brand-model-container {
-    display:grid;
+    display: grid;
     grid-auto-flow: column;
 }
 
