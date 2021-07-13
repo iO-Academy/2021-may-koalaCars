@@ -22,4 +22,13 @@ class CarHydrator
         $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
         return $query->fetch();
     }
+
+    public static function getMakes(\PDO $db): array
+    {
+        $make = $_GET['make'];
+        $query = $db->prepare('SELECT `make` FROM `cars` GROUP BY `make` ORDER BY COUNT(`make`) DESC;');
+        $query->execute([$make]);
+        $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
+        return $query->fetchAll();
+    }
 }

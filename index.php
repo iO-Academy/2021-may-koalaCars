@@ -3,6 +3,7 @@ require_once 'vendor/autoload.php';
 
 $dbConnection = \KoalaCars\DbConnector::getDb();
 $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+$makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 
 ?>
 
@@ -12,6 +13,11 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
     <title>Title</title>
 </head>
 <body>
+<div>
+    <?php
+    echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes);
+    ?>
+</div>
 <div class="container">
     <?php
     echo \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
