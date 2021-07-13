@@ -1,8 +1,9 @@
 <?php
+
 require_once 'vendor/autoload.php';
 
 $dbConnection = \KoalaCars\DbConnector::getDb();
-$cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+$car = \KoalaCars\Hydrators\CarHydrator::getCar($dbConnection);
 
 ?>
 
@@ -14,7 +15,7 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
 <body>
 <div class="container">
     <?php
-    echo \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
+    echo \KoalaCars\ViewHelpers\CarViewHelper::displayCarDetails($car);
     ?>
 </div>
 </body>
