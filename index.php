@@ -5,6 +5,7 @@ $dbConnection = \KoalaCars\DbConnector::getDb();
 
 if (empty($_GET['make'])) {
     $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+    print_r($cars);
 } else {
     $cars =  \KoalaCars\Hydrators\CarHydrator::getCarsByMake($dbConnection, $_GET['make']);
 }
