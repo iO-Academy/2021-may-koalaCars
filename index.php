@@ -20,7 +20,7 @@ $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 </div>
 <div class="container">
     <?php
-    echo \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
+    echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars);
     ?>
 </div>
 </body>

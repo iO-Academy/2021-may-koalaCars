@@ -9,7 +9,7 @@ class FiltersViewHelper
         $output = '';
         foreach ($makes as $make) {
             if (is_object($make)) {
-                $output .= '<button><a href="index.php?make=' . $make->getMake() . '">'. $make->getMake().'</a></button>';
+                $output .= '<button><a href="index.php?make=' . $make->getMake() . '">' . $make->getMake() . '</a></button>';
             } else {
                 return 'invalid information';
             }
