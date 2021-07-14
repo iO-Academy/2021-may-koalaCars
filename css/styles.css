@@ -115,6 +115,10 @@ a:hover {
     padding: 0;
 }
 
+.make-btn.active {
+    background-color: #C2D8E5;
+}
+
 .make-btn a:hover {
     border-radius: 4px;
     background-color: #C2D8E5;

@@ -32,7 +32,11 @@ $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 </header>
 <div>
     <?php
-    echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes);
+    if (empty($_GET['make'])) {
+        echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, '');
+    } else {
+        echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, $_GET['make']);
+    }
     ?>
     <button class="all-cars-btn"><a href="index.php">All cars</a></button>
 </div>
@@ -41,12 +45,10 @@ $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
     echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars);
     ?>
 </div>
-
 <div  class="home-scroller">
     <a href="#navbar">
         <i class="fas fa-chevron-up"></i>
     </a>
 </div>
-
 </body>
 </html>
