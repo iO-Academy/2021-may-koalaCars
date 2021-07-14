@@ -18,26 +18,32 @@ class CarEntity extends VehicleAbstract
     {
        return $this->id;
     }
+
     public function getMake(): string
     {
        return $this->make;
     }
+
     public function getModel(): string
     {
        return $this->model;
     }
-    public function getYear(): int
+
+    public function getYear(): ?int
     {
        return $this->year;
     }
-    public function getColor(): string
+
+    public function getColor(): ?string
     {
         return $this->color;
     }
+
     public function getLocation(): string
     {
        return $this->location;
     }
+
     public function getImage(): string
     {
        return $this->image;

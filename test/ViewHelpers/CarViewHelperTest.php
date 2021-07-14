@@ -32,7 +32,7 @@ class CarViewHelperTest extends TestCase
             ->method('getImage')
             ->willReturn('Image');
         $output = \KoalaCars\ViewHelpers\CarViewHelper::displayCarDetails($carEntityMock);
-        $expected = '<div class="details"><h1>Make: </h1>Make<h1>Model: </h1>Model<h1>Year: </h1>12<h1>Color: </h1>Color<h1>Location: </h1>Location</div><div class="car"><img src="https://dev.io-academy.uk/resources/cars/Image"</div>';
+        $expected = '<div class="carCards-container"><div class="brand-model-container"><h1 class="make"><span>Make:</span>Make</h1><h1 class="model"><span>Model:</span>Model</h1><h1 class="year"><span>Year:</span>12</h1><h1 class="color"><span>Color:</span>Color</h1><h1 class="location"><span>Location:</span>Location</h1></div><img class="car-img" src="https://dev.io-academy.uk/resources/cars/Image"></div>';
         $this->assertEquals($expected, $output);
     }
 
