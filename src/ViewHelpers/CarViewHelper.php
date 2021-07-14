@@ -1,4 +1,5 @@
 <?php
+
 namespace KoalaCars\ViewHelpers;
 use KoalaCars\Entities\CarEntity;
 
@@ -14,11 +15,15 @@ class CarViewHelper
         return $output;
     }
 
-    public static function displayAllCars(array $cars): string
+    public static function displayCars(array $cars): string
     {
         $output = '';
         foreach ($cars as $car) {
-            $output .= self::displayCar($car);
+            try {
+                $output .= self::displayCar($car);
+            } catch(\TypeError $e) {
+                return '';
+            }
         }
         return $output;
     }
