@@ -72,13 +72,13 @@ main {
     margin-bottom: 5px;
 }
 
-.link, a {
+.link {
     text-align: center;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
-a {
+.index-link {
     color: #000000;
     font-size: 1.2rem;
     text-decoration: none;
@@ -87,6 +87,75 @@ a {
     border-radius: 5px;
 }
 
-a:hover {
+.index-link:hover {
     background-color: #C2D8E5;
+}
+
+.link-details {
+    position: relative;
+    text-align: center;
+    margin: 50px auto;
+    width: 15%;
+}
+
+.details-link {
+    background-color: #AFCDDE;
+    box-shadow: 0 8px 8px  #000000;
+    color: #000000;
+    font-size: 1.8rem;
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.details-link:hover {
+    background-color: #ffffff;
+}
+
+.main-container {
+    position: relative;
+    top: 80px;
+}
+
+.details-carCards-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 85%;
+    box-shadow: 0 8px 8px  #000000;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin: auto;
+}
+
+.brand-model-container-details {
+    background-image: linear-gradient(to right, #79ADCA, #ffffff);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.brand-model-container-details span {
+    display: grid;
+    grid-auto-flow: column;
+    font-size: 1.5rem;
+    color: #0D296C;
+    margin-right: 20px;
+}
+
+.make, .model, .year, .color, .location {
+    border-right: 2px solid #000000;
+    font-size: 1.2rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    margin: 8px;
+    width: 25%;
+}
+
+.car-img {
+    width: 100%;
+    border-radius: 100px;
 }
