@@ -22,7 +22,7 @@ class CarViewHelperTest extends TestCase
         ->method('getImage')
         ->willReturn('Image');
     $array[] = $carEntityMock;
-    $expected = '<div class="carCards-container"><img src="https://dev.io-academy.uk/resources/cars/Image"><div class="brand-model-container"><h1 class="make">Make</h1><h1 class="model">Model</h1></div></div>';
+    $expected = '<div class="carCards-container"><img src="https://dev.io-academy.uk/resources/cars/Image"><div class="brand-model-container"><h1 class="makeCard">Make</h1><h1 class="modelCard">Model</h1></div><div class="link"><a class="index-link" href="details.php?id=0">More Details</a></div></div>';
     $output = \KoalaCars\ViewHelpers\CarViewHelper::displayCars($array);
     $this->assertEquals($expected, $output);
     }
@@ -63,10 +63,9 @@ class CarViewHelperTest extends TestCase
             ->method('getImage')
             ->willReturn('Image');
         $output = \KoalaCars\ViewHelpers\CarViewHelper::displayCarDetails($carEntityMock);
-        $expected = '<div class="carCards-container"><div class="brand-model-container"><h1 class="make"><span>Make:</span>Make</h1><h1 class="model"><span>Model:</span>Model</h1><h1 class="year"><span>Year:</span>12</h1><h1 class="color"><span>Color:</span>Color</h1><h1 class="location"><span>Location:</span>Location</h1></div><img class="car-img" src="https://dev.io-academy.uk/resources/cars/Image"></div>';
+        $expected = '<div class="details-carCards-container"><div class="brand-model-container-details"><h1 class="make"><span>Make:</span>Make</h1><h1 class="model"><span>Model:</span>Model</h1><h1 class="year"><span>Year:</span>12</h1><h1 class="color"><span>Color:</span>Color</h1><h1 class="location"><span>Location:</span>Location</h1></div><img class="car-img" src="https://dev.io-academy.uk/resources/cars/Image"></div>';
         $this->assertEquals($expected, $output);
     }
-
 
     public function testDisplayCarDetails_malformed()
     {
