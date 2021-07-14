@@ -12,9 +12,6 @@ class CarViewHelperTest extends TestCase
     {
     $carEntityMock = $this->createMock(\KoalaCars\Entities\CarEntity::class);
     $carEntityMock->expects($this->once())
-        ->method('getId')
-        ->willReturn(1);
-    $carEntityMock->expects($this->once())
         ->method('getModel')
         ->willReturn('Model');
     $carEntityMock->expects($this->once())
@@ -24,9 +21,9 @@ class CarViewHelperTest extends TestCase
         ->method('getImage')
         ->willReturn('Image');
     $array[] = $carEntityMock;
+    $expected = '<div class="carCards-container"><img src="https://dev.io-academy.uk/resources/cars/Image"><div class="brand-model-container"><h1 class="make">Make</h1><h1 class="model">Model</h1></div></div>';
     $output = \KoalaCars\ViewHelpers\CarViewHelper::displayCars($array);
-    $expected = '<div class="car_image"><img src="https://dev.io-academy.uk/resources/cars/Image"></div><div><h1>Make: </h1>Make</div><div><h1>Model: </h1>Model</div><div><a href="details.php?id=1">See more</a></div>';
-    $this->assertEquals($output, $expected);
+    $this->assertEquals($expected, $output);
     }
 
     public function testDisplayCars_malformed()
