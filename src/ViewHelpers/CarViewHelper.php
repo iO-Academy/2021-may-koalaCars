@@ -30,7 +30,6 @@ class CarViewHelper
                 '<h1>Color: </h1>' . $car->getColor() .
                 '<h1>Location: </h1>' . $car->getLocation() . '</div>';
             $details .= '<div class="car"><img src="https://dev.io-academy.uk/resources/cars/' . $car->getImage(). '"</div>';
-
         } else {
             return 'invalid information';
         }

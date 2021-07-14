@@ -38,7 +38,6 @@ $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
         echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, $_GET['make']);
     }
     ?>
-    <button class="all-cars-btn"><a href="index.php">All cars</a></button>
 </div>
 <div class="main-container">
     <?php
