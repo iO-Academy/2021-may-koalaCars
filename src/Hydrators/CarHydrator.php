@@ -27,7 +27,6 @@ class CarHydrator
     {
         $query = $db->prepare('SELECT `make` FROM `cars` GROUP BY `make` ORDER BY COUNT(`make`) DESC;');
         $query->execute();
-        $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
         return $query->fetchAll();
     }
 

@@ -12,32 +12,42 @@ if (empty($_GET['make'])) {
 $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 ?>
 
-    <head>
-        <meta charset="UTF-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/normalise.css" type="text/css">
-        <link rel="stylesheet" href="css/styles.css" type="text/css">
-        <title>KoalasCars</title>
-    </head>
-    <body>
-    <header>
-        <nav>
-            <img class="logo" src="images/Logo.png" alt="KoalasCars">
-            <h1 class="title-logo">Koalas Cars</h1>
-        </nav>
-    </header>
-    <div>
-        <?php
-        echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes);
-        ?>
-        <button><a href="index.php">All cars</a></button>
-    </div>
-        <main>
-            <?php
-            echo \KoalaCars\ViewHelpers\CarViewHelper::displayAllCars($cars);
-            ?>
-        </main>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalise.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>KoalasCars</title>
+</head>
+<body>
+<header>
+    <nav id="navbar">
+        <img class="logo" src="images/Logo.png" alt="KoalasCars">
+        <h1 class="title-logo">Koalas Cars</h1>
+    </nav>
+</header>
+<div>
+    <?php
+    if (empty($_GET['make'])) {
+        echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, '');
+    } else {
+        echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, $_GET['make']);
+    }
+    ?>
+</div>
+<main>
+    <?php
+    echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars);
+    ?>
+</main>
+<div  class="home-scroller">
+    <a href="#navbar">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</div>
+</body>
 </html>

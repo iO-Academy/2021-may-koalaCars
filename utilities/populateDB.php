@@ -34,7 +34,6 @@ try {
 
         $query = $db->prepare("INSERT INTO `cars` (`id`, `make`, `model`, `year`, `color`, `location`, `image`) 
             VALUES (:id, :make, :model, :year, :color, :location, :image)");
-
         $query->execute([':id' => $car->id,
             ':make' => $car->make,
             ':model' => $car->model,
