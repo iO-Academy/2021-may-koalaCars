@@ -2,7 +2,11 @@
 require_once 'vendor/autoload.php';
 
 $dbConnection = \KoalaCars\DbConnector::getDb();
-$car = \KoalaCars\Hydrators\CarHydrator::getCar($dbConnection);
+$car = \KoalaCars\Hydrators\CarHydrator::getCar($dbConnection, $_GET['id']);
+
+if (empty($car)) {
+    header('Location: index.php');
+}
 ?>
 
 <html lang="en">

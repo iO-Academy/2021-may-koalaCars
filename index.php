@@ -2,7 +2,6 @@
 require_once 'vendor/autoload.php';
 
 $dbConnection = \KoalaCars\DbConnector::getDb();
-
 $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
 
 ?>

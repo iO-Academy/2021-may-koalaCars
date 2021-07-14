@@ -15,12 +15,15 @@ class CarHydrator
         return $query->fetchAll();
     }
 
-    public static function getCar(\PDO $db): CarEntity
+    public static function getCar(\PDO $db, $id): ?CarEntity
     {
-        $id = $_GET['id'];
         $query = $db->prepare('SELECT `make`, `model`, `year`,`color`,`location`,`image` FROM `cars` WHERE `id` = ?');
         $query->execute([$id]);
         $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
-        return $query->fetch();
+        $result = $query->fetch();
+        if ($result === false) {
+            return null;
+        }
+        return $result;
     }
 }
