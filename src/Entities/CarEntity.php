@@ -9,8 +9,8 @@ class CarEntity extends VehicleAbstract
     private int $id;
     private string $make;
     private string $model;
-    private int $year;
-    private string $color;
+    private ?int $year;
+    private ?string $color;
     private string $location;
     private string $image;
 
