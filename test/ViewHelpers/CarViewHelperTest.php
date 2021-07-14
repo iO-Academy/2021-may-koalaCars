@@ -1,7 +1,5 @@
 <?php
 
-
-
 require_once '../../src/Abstracts/VehicleAbstract.php';
 require_once '../../src/ViewHelpers/CarViewHelper.php';
 require_once '../../src/Entities/CarEntity.php';
