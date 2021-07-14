@@ -29,13 +29,13 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
 
 <div class="add_car">
     <h1>Add A Car</h1>
-    <form action="addToDB.php">
+    <form action="addCarToDB.php">
     <label for="make">Make:</label>
     <input type="text" id="make" name="make" required>
     <label for="model">Model:</label>
     <input type="text" id="model" name="model" required>
     <label for="year">Year:</label>
-    <input type="text" id="year" name="year">
+    <input type="number" id="year" name="year" min="1000" max="2500">
     <label for="color">Color:</label>
     <input type="text" id="color" name="color">
     <label for="location">Location:</label>

@@ -4,9 +4,9 @@
 namespace KoalaCars\Hydrators;
 
 
-class AddCarToDB
+class CreateCarHydrator
 {
-    public static function addToDB(\PDO $db, array $carDetails)
+    public static function createCar(\PDO $db, array $carDetails)
     {
         $query = $db->prepare('INSERT INTO `cars` (`make`, `model`, `year`, `color`, `location`, `image`)
                 VALUES (:make, :model, :year, :color, :location, :image)');
@@ -16,8 +16,6 @@ class AddCarToDB
         ':color' => $carDetails['color'],
         ':location' => $carDetails['location'],
         ':image' => $carDetails['image']]);
-        if ($query == true) {
-            header('Location: index.php');
-        }
+        return $query;
     }
 }
