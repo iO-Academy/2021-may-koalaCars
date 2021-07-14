@@ -9,6 +9,17 @@ body {
     background-size: cover;
 }
 
+.add_car {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2% 33%;
+}
+
+input, label {
+    margin: 3%;
+}
+
 nav {
     background-image: url("../images/bck-ground5.jpg");
     display: flex;

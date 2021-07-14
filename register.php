@@ -26,20 +26,36 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
         <h1 class="title-logo">Koalas Cars</h1>
     </nav>
 </header>
-<form>
-    <label for="fname">Make:</label><br>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Model:</label><br><br>
-    <input type="text" id="lname" name="lname">
-    <label for="fname">Year:</label><br><br>
-    <input type="text" id="fname" name="fname"><br><br>
-    <label for="lname">Color:</label><br><br>
-    <input type="text" id="lname" name="lname">
-    <label for="lname">Location:</label><br><br>
-    <input type="text" id="lname" name="lname">
-    <label for="lname">Image:</label><br><br>
-    <input type="text" id="lname" name="lname">
-</form>
+
+<div class="add_car">
+    <h1>Add A Car</h1>
+    <form action="addToDB.php">
+    <label for="make">Make:</label>
+    <input type="text" id="make" name="make" required>
+    <label for="model">Model:</label>
+    <input type="text" id="model" name="model" required>
+    <label for="year">Year:</label>
+    <input type="text" id="year" name="year">
+    <label for="color">Color:</label>
+    <input type="text" id="color" name="color">
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" required>
+    <label for="image">Image:</label>
+    <select id="image"" name="image">
+        <option value="image1.png">Truck</option>
+        <option value="image2.png">Convertible</option>
+        <option value="image3.png">Sporty Macorty</option>
+        <option value="image4.png">Hatchback</option>
+        <option value="image5.png">Smarty Pants</option>
+        <option value="image6.png">Estate</option>
+        <option value="image7.png">SUV</option>
+        <option value="image8.png">Mike's Car</option>
+    </select>
+    <button>Submit</button>
+        <button><a href="index.php">Back to homepage</a></button>
+
+    </form>
+</div>
 <main>
 </main>
 </body>
