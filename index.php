@@ -39,11 +39,11 @@ $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
     }
     ?>
 </div>
-<div class="main-container">
+<main>
     <?php
     echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars);
     ?>
-</div>
+</main>
 <div  class="home-scroller">
     <a href="#navbar">
         <i class="fas fa-chevron-up"></i>
