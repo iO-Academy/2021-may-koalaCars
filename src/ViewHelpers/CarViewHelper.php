@@ -2,6 +2,9 @@
 
 namespace KoalaCars\ViewHelpers;
 
+use KoalaCars\Abstracts\VehicleAbstract;
+use KoalaCars\Entities\CarEntity;
+
 class CarViewHelper
 {
     public static function displayAllCars(array $cars): string
@@ -20,20 +23,16 @@ class CarViewHelper
         return $output;
     }
 
-    public static function displayCarDetails(object $car): string
+    public static function displayCarDetails(VehicleAbstract $car): string
     {
         $details = '';
-        if (is_object($car)) {
-            $details .= '<div class="details"><h1>Make: </h1>' . $car->getMake() .
-                '<h1>Model: </h1>' . $car->getModel() .
-                '<h1>Year: </h1>' . $car->getYear() .
-                '<h1>Color: </h1>' . $car->getColor() .
-                '<h1>Location: </h1>' . $car->getLocation() . '</div>';
-            $details .= '<div class="car"><img src="https://dev.io-academy.uk/resources/cars/' . $car->getImage(). '"</div>';
+        $details .= '<div class="details"><h1>Make: </h1>' . $car->getMake() .
+            '<h1>Model: </h1>' . $car->getModel() .
+            '<h1>Year: </h1>' . $car->getYear() .
+            '<h1>Color: </h1>' . $car->getColor() .
+            '<h1>Location: </h1>' . $car->getLocation() . '</div>';
+        $details .= '<div class="car"><img src="https://dev.io-academy.uk/resources/cars/' . $car->getImage(). '"</div>';
 
-        } else {
-            return 'invalid information';
-        }
         return $details;
     }
 }
