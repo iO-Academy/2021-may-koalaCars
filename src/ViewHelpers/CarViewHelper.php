@@ -19,6 +19,7 @@ class CarViewHelper
     }
 
     public static function displayCars(array $cars): string
+
     {
         $output = '';
         foreach ($cars as $car) {
