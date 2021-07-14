@@ -14,6 +14,7 @@ class CarHydrator
         $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
         return $query->fetchAll();
     }
+
     public static function getCar(\PDO $db): CarEntity
     {
         $id = $_GET['id'];
