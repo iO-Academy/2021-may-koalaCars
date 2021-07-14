@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class CarViewHelperTest extends TestCase
 {
+
     public function testDisplayCars_success()
     {
     $carEntityMock = $this->createMock(\KoalaCars\Entities\CarEntity::class);
@@ -65,6 +66,7 @@ class CarViewHelperTest extends TestCase
         $expected = '<div class="carCards-container"><div class="brand-model-container"><h1 class="make"><span>Make:</span>Make</h1><h1 class="model"><span>Model:</span>Model</h1><h1 class="year"><span>Year:</span>12</h1><h1 class="color"><span>Color:</span>Color</h1><h1 class="location"><span>Location:</span>Location</h1></div><img class="car-img" src="https://dev.io-academy.uk/resources/cars/Image"></div>';
         $this->assertEquals($expected, $output);
     }
+
 
     public function testDisplayCarDetails_malformed()
     {

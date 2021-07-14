@@ -1,6 +1,7 @@
 <?php
 
 namespace KoalaCars\ViewHelpers;
+
 use KoalaCars\Abstracts\VehicleAbstract;
 use KoalaCars\Entities\CarEntity;
 
