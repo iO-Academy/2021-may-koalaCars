@@ -8,13 +8,11 @@ class FiltersViewHelper
     {
         $output = '<div class="make-container">';
         foreach ($makes as $make) {
-            if ($make) {
                 $class = '';
                 if ($selectedMake == $make) {
                     $class = ' active';
                 }
                 $output .= '<button class="make-btn ' . $class . '"><a href="index.php?make=' . $make . '">' . $make . '</a></button>';
-            }
         }
         $output .= '</div> ' . self::displayAllCarsButton($selectedMake);
         return $output;
