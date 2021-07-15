@@ -4,26 +4,23 @@ namespace KoalaCars\ViewHelpers;
 
 class RegisterCarViewHelper
 {
-    public static function displayValidationError($error)
+    public static function displayValidationError(int $error)
     {
         switch ($error) {
             case 1:
-                echo 'Please enter a valid make!';
-                break;
+                return 'Please enter a valid make!';
             case 2:
-                echo 'Please enter a valid model!';
-                break;
+                return 'Please enter a valid model!';
             case 3:
-                echo 'Please enter a valid year!';
-                break;
+                return 'Please enter a valid year!';
             case 4:
-                echo 'Please enter a valid colour!';
-                break;
+                return 'Please enter a valid colour!';
             case 5:
-                echo 'Please enter a valid location!';
-                break;
+                return 'Please enter a valid location!';
             case 6:
-                echo 'Car couldn\'t be added. Please try again later!';
+                return 'Car couldn\'t be added. Please try again later!';
+            default:
+                return 'Unexpected error returned';
         }
     }
 }

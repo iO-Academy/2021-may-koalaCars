@@ -52,7 +52,7 @@ require_once 'vendor/autoload.php';
     <div>
         <p class="errorMessage"><?php
         if (isset($_GET['error'])) {
-            \KoalaCars\ViewHelpers\RegisterCarViewHelper::displayValidationError($_GET['error']);
+           echo \KoalaCars\ViewHelpers\RegisterCarViewHelper::displayValidationError($_GET['error']);
         }
         ?></p>
     </div>
