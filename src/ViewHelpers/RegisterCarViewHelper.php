@@ -4,7 +4,7 @@ namespace KoalaCars\ViewHelpers;
 
 class RegisterCarViewHelper
 {
-    public static function displayValidationError(int $error)
+    public static function displayValidationError(int $error): string
     {
         switch ($error) {
             case 1:
@@ -22,5 +22,10 @@ class RegisterCarViewHelper
             default:
                 return 'Unexpected error returned';
         }
+    }
+
+    public static function displaySuccessMessage()
+    {
+        return 'Your car was added to the auction successfully';
     }
 }

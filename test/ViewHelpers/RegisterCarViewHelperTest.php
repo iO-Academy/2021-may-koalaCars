@@ -57,7 +57,7 @@ class RegisterCarViewHelperTest extends TestCase
 
     public function testDisplayValidationError_failure()
     {
-        $output = \KoalaCars\ViewHelpers\RegisterCarViewHelper::displayValidationError('56');
+        $output = \KoalaCars\ViewHelpers\RegisterCarViewHelper::displayValidationError(56);
         $expected = 'Unexpected error returned';
         $this->assertEquals($expected, $output);
     }

@@ -10,7 +10,7 @@ if ($validation === true) {
     $query = \KoalaCars\Hydrators\CreateCarHydrator::createCar($dbConnection, $_POST);
 
     if ($query == true) {
-        header('Location: index.php');
+        header('Location: index.php?success');
     } else {
         header('Location: register.php?error=6');
     }

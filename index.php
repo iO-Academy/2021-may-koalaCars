@@ -40,6 +40,13 @@ $makes = \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
     }
     ?>
 </div>
+<div class="success_message">
+    <?php
+    if (empty($_GET['success'])) {
+        echo \KoalaCars\ViewHelpers\RegisterCarViewHelper::displaySuccessMessage();
+    }
+    ?>
+</div>
 <main>
     <?php
     echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars);

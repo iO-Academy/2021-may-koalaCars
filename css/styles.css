@@ -306,3 +306,10 @@ input, select, .submit_button {
     margin-left: 300px;
     margin-top: 50px;
 }
+
+.success_message {
+    color: white;
+    margin-left: 28%;
+    margin-top: 3%;
+    font-size: 2.5rem;
+}
