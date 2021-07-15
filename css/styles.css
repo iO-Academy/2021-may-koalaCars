@@ -21,7 +21,7 @@ nav {
 }
 
 nav .logo {
-    width: 15rem;
+    width: 8rem;
 }
 
 nav h1 {
@@ -36,7 +36,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    top: 40px;
+    top: 130px;
+
 }
 
 .carCards-container {
@@ -74,7 +75,7 @@ main {
 
 .link {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     margin-top: 20px;
 }
 
@@ -85,6 +86,7 @@ main {
     padding: 5px;
     border: 1px solid #000000;
     border-radius: 5px;
+    transition: 0.15s;
 }
 
 .index-link:hover {
@@ -166,9 +168,9 @@ main {
     border-radius: 4px;
     padding: 5px 8px;
     margin: 5px;
-    transition: 0.15s;
     border: 1px solid #000000FF;
     box-shadow: 0 8px 8px #000000;
+    transition: 0.15s;
 }
 
 .make-container {
@@ -183,7 +185,6 @@ main {
     border: none;
     text-decoration: none;
     color: #000000FF;
-
 }
 
 .make-btn.active {
@@ -209,9 +210,8 @@ main {
     background-color: #ffffff;
     padding: 8px;
     border-radius: 4px;
-    outline: none;
     border: 1px solid black;
-    box-shadow: 0 8px 8px #000000;
+    box-shadow: 0 8px 8px  #000000;
 }
 
 .all-cars-btn.active {
@@ -261,10 +261,10 @@ main {
 }
 
 @keyframes bounce {
-    0% {
+    0%  {
         bottom: 0;
     }
-    100% {
+    100%  {
         bottom: 8px;
     }
 }
