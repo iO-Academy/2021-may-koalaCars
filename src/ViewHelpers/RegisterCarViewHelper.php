@@ -22,6 +22,8 @@ class RegisterCarViewHelper
             case 5:
                 echo 'Please enter a valid location!';
                 break;
-    }
+            case 6:
+                echo 'Car couldn\'t be added. Please try again later!';
+        }
     }
 }

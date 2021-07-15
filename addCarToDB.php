@@ -11,6 +11,8 @@ if ($validation === true) {
 
     if ($query == true) {
         header('Location: index.php');
+    } else {
+        header('Location: register.php?error=6');
     }
 } else {
     header('Location: register.php?error=' . $validation);

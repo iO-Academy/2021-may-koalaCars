@@ -4,6 +4,9 @@ namespace KoalaCars\Validators;
 
 class CreateCarValidator
 {
+    private const REGEX = '/[A-Za-z][a-z]+/';
+    private const MINIMUMYEAR = 1930;
+    private const MAXIMUMYEAR = 2100;
     public static function validateCar(array $carDetails)
     {
         try {
@@ -21,10 +24,8 @@ class CreateCarValidator
     private static function validateCarMake(string $make): bool
     {
         $make = trim($make);
-        $regex = '/[A-Za-z][a-z]+/';
-        $result = preg_match($regex, $make);
-        if (is_string($make) && $result == 1) {
-                 return true;
+        if (!empty($make) && preg_match(self::REGEX, $make) == 1) {
+            return true;
         } else {
             throw new \Exception('Please enter a valid make!', 1);
         }
@@ -33,7 +34,7 @@ class CreateCarValidator
     private static function validateCarModel(string $model): bool
     {
         $model = trim($model);
-        if (is_string($model)) {
+        if (!empty($model)) {
             return true;
         } else {
             throw new \Exception('Please enter a valid model!', 2);
@@ -44,7 +45,7 @@ class CreateCarValidator
     {
         $year = trim($year);
         $year = intval($year);
-        if (is_int($year) && $year > 1930 && $year < 2100) {
+        if (is_int($year) && $year > self::MINIMUMYEAR && $year < self::MAXIMUMYEAR) {
             return true;
         } else {
             throw new \Exception('Please enter a valid year!', 3);
@@ -54,9 +55,7 @@ class CreateCarValidator
     private static function validateCarColor(string $color): bool
     {
         $color = trim($color);
-        $regex = '/[A-Za-z][a-z]+/';
-        $result = preg_match($regex, $color);
-        if (is_string($color) && $result == 1) {
+        if (!empty($color) && preg_match(self::REGEX, $color) == 1) {
             return true;
         } else {
             throw new \Exception('Please enter a valid colour!', 4);
@@ -66,9 +65,7 @@ class CreateCarValidator
     private static function validateCarLocation(string $location): bool
     {
         $location = trim($location);
-        $regex = '/[A-Za-z][a-z]+/';
-        $result = preg_match($regex, $location);
-        if (is_string($location) && $result == 1) {
+        if (!empty($location) && preg_match(self::REGEX, $location) == 1) {
             return true;
         } else {
             throw new \Exception('Please enter a valid location!', 5);
