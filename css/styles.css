@@ -112,3 +112,12 @@ input, select, .submit_button {
     margin: 10px;
     color: #FF0000;
 }
+
+.add_car h1 {
+    text-align: center;
+}
+
+.register_button {
+    float: right;
+    height: 100px;
+}
