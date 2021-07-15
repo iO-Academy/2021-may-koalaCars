@@ -37,4 +37,18 @@ class CarHydrator
         $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
         return $query->fetchAll();
     }
+
+    public static function getYears(\PDO $db): array
+    {
+        $query = $db->prepare('SELECT `year` FROM `cars` GROUP BY `year` ORDER BY `year` ASC ;');
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    public static function getCarsByYear(\PDO $db, int $year): array
+    {
+        $query = $db->prepare('SELECT `id`, `make`, `model`,`year`, `image` FROM `cars` WHERE `year` = ?');
+        $query->execute([$year]);
+        return $query->fetchAll();
+    }
 }

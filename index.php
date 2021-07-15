@@ -10,6 +10,11 @@ if (empty($_GET['make'])) {
 }
 
 $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
+
+//$year= \KoalaCars\Hydrators\CarHydrator::getCarsByYear($dbConnection, 2007);
+//echo '<pre>';
+//print_r($year);
+//echo '</pre>';
 ?>
 
 <html lang="en">

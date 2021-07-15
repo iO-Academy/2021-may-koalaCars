@@ -15,8 +15,6 @@ class FiltersViewHelper
                         $class = ' active';
                     }
                     $output .= '<button class="make-btn ' . $class . '"><a href="index.php?make=' . $value . '">' . $value . '</a></button>';
-                } else {
-                    return 'invalid information';
                 }
             }
         }
