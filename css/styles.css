@@ -90,3 +90,36 @@ a {
 a:hover {
     background-color: #C2D8E5;
 }
+
+.add_car {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2% 40%;
+    width: 250px;
+}
+
+input, select, .submit_button {
+    margin: 5%;
+    width: 220px;
+}
+
+.back_home_button {
+    margin: 2% auto;
+}
+
+.errorMessage {
+    margin: 10px;
+    color: #FF0000;
+}
+
+.add_car h1 {
+    text-align: center;
+}
+
+.register_button {
+    float: right;
+    height: 28px;
+    margin-left: 100;
+    margin-top: 120px;
+}

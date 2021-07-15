@@ -22,6 +22,7 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
     <nav>
         <img class="logo" src="images/Logo.png" alt="KoalasCars">
         <h1 class="title-logo">Koalas Cars</h1>
+        <a href="register.php" role="button" class="register_button">Auction Your Car</a>
     </nav>
 </header>
 
