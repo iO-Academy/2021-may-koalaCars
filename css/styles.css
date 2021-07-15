@@ -175,7 +175,6 @@ main {
 
 .make-container {
     text-align: center;
-    padding-top: 30px;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -203,6 +202,7 @@ main {
 }
 
 .all-cars-btn {
+    display: block;
     outline: none;
     margin-left: 47%;
     margin-top: 20px;
@@ -261,11 +261,6 @@ main {
     transform: scale(1.1);
 }
 
-.formTag {
-    margin:0 28%;
-    width: 50%;
-}
-
 .filter-btn-title {
     outline: none;
     transition: 0.15s;
@@ -274,6 +269,7 @@ main {
     border-radius: 4px;
     border: 1px solid black;
     box-shadow: 0 8px 8px  #000000;
+    margin-left: 33%;
 }
 
 .filter-btn-submit {

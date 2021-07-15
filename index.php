@@ -3,18 +3,21 @@ require_once 'vendor/autoload.php';
 
 $dbConnection = \KoalaCars\DbConnector::getDb();
 
-if (!empty($_GET['year'])) {
-    $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByYear($dbConnection, $_GET['year']);
+if (!empty($_GET['year']) && !empty($_GET['make'])) {
+    $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByYearAndMake($dbConnection, $_GET['year'], $_GET['make']);
 } else {
-    if (empty($_GET['make'])) {
-        $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+    if (!empty($_GET['year'])) {
+        $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByYear($dbConnection, $_GET['year']);
     } else {
-        $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByMake($dbConnection, $_GET['make']);
+        if (empty($_GET['make'])) {
+            $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+        } else {
+            $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByMake($dbConnection, $_GET['make']);
+        }
     }
 }
-$makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
-
-$years= \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
+$makes = \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
+$years = \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
 
 ?>
 <html lang="en">
@@ -35,18 +38,20 @@ $years= \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
     <nav id="navbar">
         <img class="logo" src="images/Logo.png" alt="KoalasCars">
         <h1 class="title-logo">Koalas Cars</h1>
-        <button class="make-btn register"><a href="register.php" role="button" >Auction Your Car</a></button>
+        <button class="make-btn register"><a href="register.php" role="button">Auction Your Car</a></button>
     </nav>
 </header>
 <div>
-    <?php
-    if (empty($_GET['make'])) {
-        echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, '');
-    } else {
-        echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, $_GET['make']);
-    }
-    echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayDropDownListYear($years);
-    ?>
+    <form action="index.php?">
+        <?php
+        echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayDropDownListYear($years);
+        if (empty($_GET['make'])) {
+            echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, '');
+        } else {
+            echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, $_GET['make']);
+        }
+        ?>
+    </form>
 </div>
 <div class="success_message">
     <?php
@@ -67,3 +72,4 @@ $years= \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
 </div>
 </body>
 </html>
+

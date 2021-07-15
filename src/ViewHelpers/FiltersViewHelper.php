@@ -12,7 +12,7 @@ class FiltersViewHelper
             if ($selectedMake == $make) {
                 $class = ' active';
             }
-            $output .= '<button class="make-btn ' . $class . '"><a href="index.php?make=' . $make . '">' . $make . '</a></button>';
+            $output .= '<button class="make-btn '.$class.'" type="submit" name="make" value="'.$make.'">' . $make . '</button>';
         }
         $output .= '</div> ' . self::displayAllCarsButton($selectedMake);
         return $output;
@@ -25,20 +25,20 @@ class FiltersViewHelper
         if (empty($selectedMake)) {
             $class = ' active';
         }
-        $output .= '<button class="all-cars-btn ' . $class . '"><a href="index.php">All cars</a></button>';
+        $output .= '<button class="all-cars-btn ' . $class . '" type="submit">All cars</button>';
 
         return $output;
     }
 
     public static function displayDropDownListYear(array $years): string
     {
-        $output = '<form class="formTag" action="index.php?year="><label class="filter-btn-title">Filter By Year:
+        $output = '<label class="filter-btn-title">Filter By Year:
                         <select name="year" class="filter-button">
                           <option value="">Select Year</option>';
         foreach ($years as $year) {
             $output .= '<option value="' . $year . '">'. $year .'</option>';
         }
-        $output .= '</select></label><input type="submit" value="submit" class="filter-btn-submit"></form>';
+        $output .= '</select></label>';
         return $output;
     }
 
