@@ -8,12 +8,20 @@ if (empty($_GET['make'])) {
 } else {
     $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByMake($dbConnection, $_GET['make']);
 }
+
+if (empty($_GET['year'])) {
+    $cars = \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
+} else {
+    $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByYear($dbConnection, $_GET['year']);
+//
+//   echo '<pre>';
+//print_r($cars);
+//echo '</pre>';
+//    echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars, $years);
+}
 $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 
-//$year= \KoalaCars\Hydrators\CarHydrator::getCarsByYear($dbConnection, 2007);
-//echo '<pre>';
-//print_r($year);
-//echo '</pre>';
+$years= \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
 
 ?>
 <html lang="en">
@@ -38,6 +46,8 @@ $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 </header>
 <div>
     <?php
+    echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayDropDownListYear($years);
+
     if (empty($_GET['make'])) {
         echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, '');
     } else {

@@ -26,6 +26,20 @@ class FiltersViewHelper
             $class = ' active';
         }
         $output .= '<button class="all-cars-btn ' . $class . '"><a href="index.php">All cars</a></button>';
+
         return $output;
     }
+
+    public static function displayDropDownListYear(array $years): string
+    {
+        $output = '<form action="index.php?year="><label class="all-cars-btn ">Filter By Year:
+                        <select name="year">
+                          <option value="#">Select Year</option>';
+        foreach ($years as $year) {
+            $output .= '<option value="' . $year . '">'. $year .'</option>';
+        }
+        $output .= '</select></label><input type="submit" value="submit"></form>';
+        return $output;
+    }
+
 }
