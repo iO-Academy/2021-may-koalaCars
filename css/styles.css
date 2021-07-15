@@ -269,7 +269,7 @@ main {
     border-radius: 4px;
     border: 1px solid black;
     box-shadow: 0 8px 8px  #000000;
-    margin-left: 33%;
+    margin-left: 35vw;
 }
 
 .filter-btn-submit {
@@ -332,7 +332,7 @@ input, select, .submit_button {
 
 .make-btn.register {
     height: 40px;
-    margin-left: 50%;
+    margin-left: 45vw;
     margin-top: 50px;
 }
 
