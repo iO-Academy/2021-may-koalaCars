@@ -32,13 +32,13 @@ class FiltersViewHelper
 
     public static function displayDropDownListYear(array $years): string
     {
-        $output = '<form action="index.php?year="><label class="all-cars-btn ">Filter By Year:
-                        <select name="year">
+        $output = '<form class="formTag" action="index.php?year="><label class="filter-btn-title">Filter By Year:
+                        <select name="year" class="filter-button">
                           <option value="">Select Year</option>';
         foreach ($years as $year) {
             $output .= '<option value="' . $year . '">'. $year .'</option>';
         }
-        $output .= '</select></label><input type="submit" value="submit"></form>';
+        $output .= '</select></label><input type="submit" value="submit" class="filter-btn-submit"></form>';
         return $output;
     }
 

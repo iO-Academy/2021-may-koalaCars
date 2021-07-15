@@ -41,13 +41,12 @@ $years= \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
 </header>
 <div>
     <?php
-    echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayDropDownListYear($years);
-
     if (empty($_GET['make'])) {
         echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, '');
     } else {
         echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, $_GET['make']);
     }
+    echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayDropDownListYear($years);
     ?>
 </div>
 <main>
