@@ -30,8 +30,9 @@ class CarHydrator
     public static function getMakes(\PDO $db): array
     {
         $query = $db->prepare('SELECT `make` FROM `cars` GROUP BY `make` ORDER BY COUNT(`make`) DESC;');
+
         $query->execute();
-        return $query->fetchAll();
+        return $query->fetchAll(\PDO::FETCH_COLUMN);
     }
 
     public static function getCarsByMake(\PDO $db, $make)

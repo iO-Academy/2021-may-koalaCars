@@ -168,7 +168,7 @@ main {
     border-radius: 4px;
     padding: 5px 8px;
     margin: 5px;
-    border: 1px solid #000000FF;
+    border: 1px solid #000000;
     box-shadow: 0 8px 8px #000000;
     transition: 0.15s;
 }
@@ -184,7 +184,7 @@ main {
     outline: none;
     border: none;
     text-decoration: none;
-    color: #000000FF;
+    color: #000000;
 }
 
 .make-btn.active {
@@ -227,7 +227,7 @@ main {
     outline: none;
     border: none;
     text-decoration: none;
-    color: #000000FF;
+    color: #000000;
 }
 
 .all-cars-btn a:hover {

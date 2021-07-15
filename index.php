@@ -45,7 +45,7 @@ $makes = \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
     echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars);
     ?>
 </main>
-<div  class="home-scroller">
+<div class="home-scroller">
     <a href="#navbar">
         <i class="fas fa-chevron-up"></i>
     </a>
