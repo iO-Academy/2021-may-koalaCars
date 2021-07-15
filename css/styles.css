@@ -119,5 +119,7 @@ input, select, .submit_button {
 
 .register_button {
     float: right;
-    height: 100px;
+    height: 28px;
+    margin-left: 100;
+    margin-top: 120px;
 }

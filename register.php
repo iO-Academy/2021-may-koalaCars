@@ -60,7 +60,7 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
         }
         ?></p>
     </div>
-    <button class="back_home_button"><a class="back_home_button" href="index.php">Back to homepage</a></button>
+    <a href="index.php" role="button" class="back_home_button">Back to homepage</a>
 </div>
 <main>
 </main>
