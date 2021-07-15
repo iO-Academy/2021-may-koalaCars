@@ -11,7 +11,6 @@ if (!empty($_GET['year'])) {
     } else {
         $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByMake($dbConnection, $_GET['make']);
     }
-
 }
 $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 
