@@ -42,8 +42,8 @@ $makes = \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 </div>
 <div class="success_message">
     <?php
-    if (empty($_GET['success'])) {
-        echo \KoalaCars\ViewHelpers\RegisterCarViewHelper::displaySuccessMessage();
+    if (!empty($_GET['success'])) {
+        echo 'Your car was added to the auction successfully';
     }
     ?>
 </div>

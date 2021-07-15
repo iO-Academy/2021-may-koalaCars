@@ -23,9 +23,4 @@ class RegisterCarViewHelper
                 return 'Unexpected error returned';
         }
     }
-
-    public static function displaySuccessMessage()
-    {
-        return 'Your car was added to the auction successfully';
-    }
 }
