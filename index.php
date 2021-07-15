@@ -3,16 +3,15 @@ require_once 'vendor/autoload.php';
 
 $dbConnection = \KoalaCars\DbConnector::getDb();
 
-if (empty($_GET['make'])) {
-    $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
-} else {
-    $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByMake($dbConnection, $_GET['make']);
-}
-
-if (empty($_GET['year'])) {
-    $cars = \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
-} else {
+if (!empty($_GET['year'])) {
     $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByYear($dbConnection, $_GET['year']);
+} else {
+    if (empty($_GET['make'])) {
+        $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
+    } else {
+        $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByMake($dbConnection, $_GET['make']);
+    }
+
 }
 $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 
