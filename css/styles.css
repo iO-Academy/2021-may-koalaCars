@@ -274,3 +274,42 @@ main {
         left: 90%;
     }
 }
+
+.add_car {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2% 40%;
+    width: 250px;
+}
+
+input, select, .submit_button {
+    margin: 5%;
+    width: 220px;
+}
+
+.back_home_button {
+    margin: 2% auto;
+}
+
+.errorMessage {
+    margin: 10px;
+    color: #FF0000;
+}
+
+.add_car h1 {
+    text-align: center;
+}
+
+.make-btn.register {
+    height: 40px;
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+.success_message {
+    color: white;
+    margin-left: 28%;
+    margin-top: 3%;
+    font-size: 2.5rem;
+}

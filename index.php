@@ -28,6 +28,7 @@ $makes = \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
     <nav id="navbar">
         <img class="logo" src="images/Logo.png" alt="KoalasCars">
         <h1 class="title-logo">Koalas Cars</h1>
+        <button class="make-btn register"><a href="register.php" role="button" >Auction Your Car</a></button>
     </nav>
 </header>
 <div>
@@ -36,6 +37,13 @@ $makes = \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
         echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, '');
     } else {
         echo \KoalaCars\ViewHelpers\FiltersViewHelper::displayMakes($makes, $_GET['make']);
+    }
+    ?>
+</div>
+<div class="success_message">
+    <?php
+    if (!empty($_GET['success'])) {
+        echo 'Your car was added to the auction successfully';
     }
     ?>
 </div>
