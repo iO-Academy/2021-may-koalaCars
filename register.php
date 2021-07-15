@@ -2,8 +2,6 @@
 
 require_once 'vendor/autoload.php';
 
-$dbConnection = \KoalaCars\DbConnector::getDb();
-
 ?>
 
 <html lang="en">

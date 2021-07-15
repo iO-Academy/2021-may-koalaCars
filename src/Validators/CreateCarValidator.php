@@ -7,6 +7,7 @@ class CreateCarValidator
     private const REGEX = '/[A-Za-z][a-z]+/';
     private const MINIMUMYEAR = 1930;
     private const MAXIMUMYEAR = 2100;
+
     public static function validateCar(array $carDetails)
     {
         try {
