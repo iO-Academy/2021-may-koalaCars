@@ -28,6 +28,7 @@ $makes = \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
     <nav id="navbar">
         <img class="logo" src="images/Logo.png" alt="KoalasCars">
         <h1 class="title-logo">Koalas Cars</h1>
+        <button class="make-btn register"><a href="register.php" role="button" >Auction Your Car</a></button>
     </nav>
 </header>
 <div>
