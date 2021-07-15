@@ -9,17 +9,6 @@ body {
     background-size: cover;
 }
 
-.add_car {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 2% 33%;
-}
-
-input, label {
-    margin: 3%;
-}
-
 nav {
     background-image: url("../images/bck-ground5.jpg");
     display: flex;
@@ -100,4 +89,26 @@ a {
 
 a:hover {
     background-color: #C2D8E5;
+}
+
+.add_car {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2% 40%;
+    width: 250px;
+}
+
+input, select, .submit_button {
+    margin: 5%;
+    width: 220px;
+}
+
+.back_home_button {
+    margin: 2% auto;
+}
+
+.errorMessage {
+    margin: 10px;
+    color: #FF0000;
 }

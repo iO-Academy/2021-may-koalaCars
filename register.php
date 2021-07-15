@@ -29,7 +29,7 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
 
 <div class="add_car">
     <h1>Add A Car</h1>
-    <form action="addCarToDB.php">
+    <form action="addCarToDB.php" method="post">
     <label for="make">Make:</label>
     <input type="text" id="make" name="make" required>
     <label for="model">Model:</label>
@@ -51,10 +51,16 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
         <option value="image7.png">SUV</option>
         <option value="image8.png">Mike's Car</option>
     </select>
-    <button>Submit</button>
-        <button><a href="index.php">Back to homepage</a></button>
-
+    <button class="submit_button">Submit</button>
     </form>
+    <div>
+        <p class="errorMessage"><?php
+        if (isset($_GET['error'])) {
+            \KoalaCars\ViewHelpers\RegisterCarViewHelper::displayValidationError($_GET['error']);
+        }
+        ?></p>
+    </div>
+    <button class="back_home_button"><a class="back_home_button" href="index.php">Back to homepage</a></button>
 </div>
 <main>
 </main>

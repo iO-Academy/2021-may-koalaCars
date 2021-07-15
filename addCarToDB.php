@@ -2,9 +2,19 @@
 
 require_once 'vendor/autoload.php';
 
-$dbConnection = \KoalaCars\DbConnector::getDb();
-$query = \KoalaCars\Hydrators\CreateCarHydrator::createCar($dbConnection, $_GET);
+$validation = \KoalaCars\Validators\CreateCarValidator::validateCar($_POST);
 
-if ($query == true) {
-    header('Location: index.php');
+if ($validation === true) {
+
+    $dbConnection = \KoalaCars\DbConnector::getDb();
+    $query = \KoalaCars\Hydrators\CreateCarHydrator::createCar($dbConnection, $_POST);
+
+    if ($query == true) {
+        header('Location: index.php');
+    }
+} else {
+    header('Location: register.php?error=' . $validation);
 }
+
+
+
