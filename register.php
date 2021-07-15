@@ -17,7 +17,6 @@ $cars = \KoalaCars\Hydrators\CarHydrator::getCars($dbConnection);
     <link rel="stylesheet" href="css/normalise.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <title>KoalasCars</title>
-
 </head>
 <body>
 <header>

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace KoalaCars\ViewHelpers;
-
 
 class RegisterCarViewHelper
 {
@@ -26,5 +24,4 @@ class RegisterCarViewHelper
                 break;
     }
     }
-
 }

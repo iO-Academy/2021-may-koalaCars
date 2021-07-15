@@ -4,7 +4,6 @@ namespace KoalaCars\Validators;
 
 class CreateCarValidator
 {
-
     public static function validateCar(array $carDetails)
     {
         try {
