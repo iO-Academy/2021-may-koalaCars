@@ -13,11 +13,6 @@ if (empty($_GET['year'])) {
     $cars = \KoalaCars\Hydrators\CarHydrator::getYears($dbConnection);
 } else {
     $cars = \KoalaCars\Hydrators\CarHydrator::getCarsByYear($dbConnection, $_GET['year']);
-//
-//   echo '<pre>';
-//print_r($cars);
-//echo '</pre>';
-//    echo \KoalaCars\ViewHelpers\CarViewHelper::displayCars($cars, $years);
 }
 $makes =  \KoalaCars\Hydrators\CarHydrator::getMakes($dbConnection);
 

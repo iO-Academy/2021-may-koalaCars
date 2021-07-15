@@ -34,7 +34,7 @@ class FiltersViewHelper
     {
         $output = '<form action="index.php?year="><label class="all-cars-btn ">Filter By Year:
                         <select name="year">
-                          <option value="#">Select Year</option>';
+                          <option value="">Select Year</option>';
         foreach ($years as $year) {
             $output .= '<option value="' . $year . '">'. $year .'</option>';
         }
