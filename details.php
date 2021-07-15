@@ -2,7 +2,6 @@
 require_once 'vendor/autoload.php';
 
 $dbConnection = \KoalaCars\DbConnector::getDb();
-
 if (!isset($_GET['id'])) {
     header('Location: index.php');
 }
@@ -13,7 +12,6 @@ if (empty($car)) {
     header('Location: index.php');
 }
 ?>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">

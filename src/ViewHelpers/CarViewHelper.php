@@ -14,7 +14,6 @@ class CarViewHelper
             '<div class="brand-model-container"><h1 class="makeCard">' . $car->getMake() . '</h1>' .
             '<h1 class="modelCard">' . $car->getModel() . '</h1></div>' .
             '<div class="link"><a class="index-link" href="details.php?id='.$car->getId().'">More Details</a></div></div>';
-
         return $output;
     }
 
@@ -42,7 +41,6 @@ class CarViewHelper
             '<h1 class="color"><span>Color:</span>'.$car->getColor() .'</h1>'.
             '<h1 class="location"><span>Location:</span>'.$car->getLocation() .'</h1></div>'.
             '<img class="car-img" src="https://dev.io-academy.uk/resources/cars/' . $car->getImage(). '"></div>';
-
         return $details;
     }
 }

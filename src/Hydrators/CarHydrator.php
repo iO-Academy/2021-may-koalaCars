@@ -26,4 +26,20 @@ class CarHydrator
         }
         return $result;
     }
+
+    public static function getMakes(\PDO $db): array
+    {
+        $query = $db->prepare('SELECT `make` FROM `cars` GROUP BY `make` ORDER BY COUNT(`make`) DESC;');
+
+        $query->execute();
+        return $query->fetchAll(\PDO::FETCH_COLUMN);
+    }
+
+    public static function getCarsByMake(\PDO $db, $make)
+    {
+        $query = $db->prepare('SELECT `id`, `make`, `model`, `image` FROM `cars` WHERE `make` = ?');
+        $query->execute([$make]);
+        $query->setFetchMode(\PDO::FETCH_CLASS, CarEntity::class);
+        return $query->fetchAll();
+    }
 }
