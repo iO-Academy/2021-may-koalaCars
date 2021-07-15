@@ -37,7 +37,7 @@ require_once 'vendor/autoload.php';
     <label for="location">Location:</label>
     <input type="text" id="location" name="location" required>
     <label for="image">Image:</label>
-    <select id="image"" name="image">
+    <select id="image"name="image">
         <option value="image1.png">Truck</option>
         <option value="image2.png">Convertible</option>
         <option value="image3.png">Sporty Macorty</option>
