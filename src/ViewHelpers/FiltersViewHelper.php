@@ -8,18 +8,20 @@ class FiltersViewHelper
     {
         $output = '<div class="make-container">';
         foreach ($makes as $make) {
-            foreach ($make as $value) {
-                if ($value) {
-                    $class = '';
-                    if ($selectedMake == $value) {
-                        $class = ' active';
-                    }
-                    $output .= '<button class="make-btn ' . $class . '"><a href="index.php?make=' . $value . '">' . $value . '</a></button>';
-                }
+            $class = '';
+            if ($selectedMake == $make) {
+                $class = ' active';
             }
+            $output .= '<button class="make-btn ' . $class . '"><a href="index.php?make=' . $make . '">' . $make . '</a></button>';
         }
-        $output .= '</div> ';
+        $output .= '</div> ' . self::displayAllCarsButton($selectedMake);
+        return $output;
+    }
+
+    private static function displayAllCarsButton(string $selectedMake): string
+    {
         $class = '';
+        $output = '';
         if (empty($selectedMake)) {
             $class = ' active';
         }
